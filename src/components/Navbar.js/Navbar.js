@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
-import Logo from "../../assets/Logo.png"; 
-import Button from "../Button"; 
-import NavLinks from "./NavLinks"; 
+import { Link } from "react-router-dom";
+import Logo from "../../assets/Logo.png";
+import Button from "../Button";
+import NavLinks from "./NavLinks";
+import Signup from "../Signup"; // Adjust the import name to match your popup component
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false); 
+  const [open, setOpen] = useState(false); // Toggle for mobile menu
+  const [showPopup, setShowPopup] = useState(false); // Toggle for popup
+
+  const handleButtonClick = () => {
+    setShowPopup(true); // Show popup when button is clicked
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close popup
+  };
 
   return (
-    // <nav className="bg-gray-100 shadow-md">
     <nav className="bg-[#f3f4f6d7] shadow-md">
       <div className="flex items-center font-medium justify-between px-5 md:px-10">
         {/* Logo Section */}
@@ -35,17 +44,17 @@ const Navbar = () => {
             <Link to="/" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Internships
             </Link>
-          </li>          
+          </li>
           <li>
             <Link to="/" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Contact Us
             </Link>
-          </li>          
+          </li>
         </ul>
 
-        {/* Button for Desktop */}
+        {/* Publish Button for Desktop */}
         <div className="hidden md:block">
-          <Button />
+          <Button onClick={handleButtonClick} />
         </div>
 
         {/* Mobile Navigation */}
@@ -67,10 +76,14 @@ const Navbar = () => {
             Contact Us
           </Link>
           <div className="py-5">
-            <Button />
+            {/* Publish Button */}
+            <Button onClick={handleButtonClick} />
           </div>
         </ul>
       </div>
+
+      {/* Sign In/Sign Up Popup */}
+      {showPopup && <Signup onClose={handleClosePopup} />}
     </nav>
   );
 };
