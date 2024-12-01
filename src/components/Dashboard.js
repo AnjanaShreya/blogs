@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar.js/Navbar";
-import Signup from "./Signup"; // Import the Signup component
+import Signup from "./Signup";
 
 const Dashboard = () => {
-  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
+  const [showPopup, setShowPopup] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleButtonClick = () => {
-    setShowPopup(true); // Show the popup
+    if (isLoggedIn) {
+      // If logged in, redirect directly to the blogform page
+      window.location.href = "/blogform";
+    } else {
+      setShowPopup(true); // Show the login/signup popup
+    }
   };
 
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
   };
 
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Set logged-in state
+    setShowPopup(false); // Close the popup
+  };
+
   return (
     <div>
-      <section
-        className="h-screen bg-Hero bg-cover font-[Poppins] md:bg-top bg-center"
-      >
+      <section className="h-screen bg-Hero bg-cover font-[Poppins] md:bg-top bg-center">
         <Navbar />
         <div className="flex flex-col justify-center text-center items-center h-3/4">
           <h2 className="text-white text-2xl font-medium">Think. Learn. Share.</h2>
@@ -25,7 +34,6 @@ const Dashboard = () => {
             "Your trusted source for legal insights, simplified."
           </h1>
           <div className="text-xl">
-            {/* Publish Button */}
             <button
               className="bg-[#002a32d5] text-white px-6 py-2 rounded-full"
               onClick={handleButtonClick}
@@ -36,8 +44,8 @@ const Dashboard = () => {
         </div>
       </section>
 
-      {/* Sign In/Sign Up Popup */}
-      {showPopup && <Signup onClose={handleClosePopup} />}
+      {/* Show Signup Popup */}
+      {showPopup && <Signup onClose={handleClosePopup} onLogin={handleLogin} />}
     </div>
   );
 };

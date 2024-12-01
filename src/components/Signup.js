@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-const Signup = ({ onClose }) => {
+const Signup = ({ onClose, onLogin }) => {
   const [isSignIn, setIsSignIn] = useState(true); // Toggle between Sign In and Sign Up
+  const navigate = useNavigate(); // Initialize navigation
 
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Simulate successful login/signup
+    onLogin(); // Notify parent component about login
+    navigate("/blogform"); // Redirect to blogform page
   };
 
   return (
@@ -21,7 +31,7 @@ const Signup = ({ onClose }) => {
         </p>
 
         {/* Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email

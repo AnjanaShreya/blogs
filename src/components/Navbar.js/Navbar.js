@@ -3,18 +3,29 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 import Button from "../Button";
 import NavLinks from "./NavLinks";
-import Signup from "../Signup"; // Adjust the import name to match your popup component
+import Signup from "../Signup";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Toggle for mobile menu
   const [showPopup, setShowPopup] = useState(false); // Toggle for popup
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleButtonClick = () => {
-    setShowPopup(true); // Show popup when button is clicked
+    if (isLoggedIn) {
+      // If logged in, redirect directly to the blogform page
+      window.location.href = "/blogform";
+    } else {
+      setShowPopup(true); // Show the login/signup popup
+    }
   };
 
   const handleClosePopup = () => {
     setShowPopup(false); // Close popup
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Set logged-in state
+    setShowPopup(false); // Close the popup
   };
 
   return (
@@ -41,12 +52,12 @@ const Navbar = () => {
           </li>
           <NavLinks />
           <li>
-            <Link to="/" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
+            <Link to="/internships" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Internships
             </Link>
           </li>
           <li>
-            <Link to="/" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
+            <Link to="/contactus" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Contact Us
             </Link>
           </li>
@@ -69,21 +80,21 @@ const Navbar = () => {
             </Link>
           </li>
           <NavLinks />
-          <Link to="/" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
+          <Link to="/internships" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
             Internships
           </Link>
-          <Link to="/" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
+          <Link to="/contactus" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
             Contact Us
           </Link>
           <div className="py-5">
-            {/* Publish Button */}
+            {/* Publish Button for Mobile */}
             <Button onClick={handleButtonClick} />
           </div>
         </ul>
       </div>
 
       {/* Sign In/Sign Up Popup */}
-      {showPopup && <Signup onClose={handleClosePopup} />}
+      {showPopup && <Signup onClose={handleClosePopup} onLogin={handleLogin} />}
     </nav>
   );
 };

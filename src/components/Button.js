@@ -9,6 +9,6 @@ const Button = ({ onClick }) => {
       Publish
     </button>
   );
-};
+};  
 
 export default Button;
