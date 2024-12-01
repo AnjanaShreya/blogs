@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar.js/Navbar";
 import Signup from "./Signup";
+import Footer from "./Navbar.js/Footer";
 
 const Dashboard = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -46,6 +47,10 @@ const Dashboard = () => {
 
       {/* Show Signup Popup */}
       {showPopup && <Signup onClose={handleClosePopup} onLogin={handleLogin} />}
+      <div className="h-44">
+        {/* Content Goes here */}
+      </div>
+      <Footer />
     </div>
   );
 };
