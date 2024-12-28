@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom'
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,9 +14,18 @@ const Footer = () => {
         <p style={{paddingLeft:'10px'}}>Founded By Mandeep Kaur</p>
         </div>
         <div className='text-gray-200'>
-            <p className='text-2xl font-semibold underline leading-loose text-white'>Contact Us</p>
-            <a className='cursor-pointer' href="mailto:abc@gmail.com">abc@gmail.com</a>
-            <p className='cursor-pointer'>+91 1234567890</p>
+          <p className='text-2xl font-semibold underline leading-loose text-white'>Contact Us</p>
+          <a className='cursor-pointer' href="mailto:abc@gmail.com">abc@gmail.com</a>
+          <p className='cursor-pointer'>+91 1234567890</p>
+          <div className="flex space-x-4">
+            <a
+              href="https://instagram.com" rel="instagram" className="hover:text-[#002a32] m-1">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://linkedin.com" rel="linkdn" className="hover:text-[#002a32] m-1">
+              <FaLinkedinIn size={20} />
+            </a>
+          </div>
         </div>
         <div className='text-gray-200'>
             <p className='text-2xl font-semibold underline leading-loose text-white'>Address</p>
