@@ -18,6 +18,7 @@ const ContactUs = () => {
           <h1 className="text-white text-3xl font-bold">Contact Us</h1>
         </div>
       </div>
+      <p style={{fontSize:'30px'}}>heleo</p>
       <Footer />
     </div>
   );

@@ -6,9 +6,12 @@ const Footer = () => {
   return (
     <div className='bg-[#155966] h-52 border-t-4 border-[#000000] '>
       <div className='text-gray-200 py-10 pe-12 flex items-center justify-around'>
+        <div>
         <Link to='/'>
-            <img src={Logo} alt='Logo' className='h-auto w-52' />
+            <img src={Logo} alt='Logo' className='h-16' />
         </Link>
+        <p style={{paddingLeft:'10px'}}>Founded By Mandeep Kaur</p>
+        </div>
         <div className='text-gray-200'>
             <p className='text-2xl font-semibold underline leading-loose text-white'>Contact Us</p>
             <a className='cursor-pointer' href="mailto:abc@gmail.com">abc@gmail.com</a>

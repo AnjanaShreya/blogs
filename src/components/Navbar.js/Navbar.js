@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/Logo.png";
+import Logo from '../../assets/Logo.png'
 import Button from "../Button";
 import NavLinks from "./NavLinks";
 import Signup from "../Signup";
@@ -51,11 +51,11 @@ const Navbar = () => {
             </Link>
           </li>
           <NavLinks />
-          <li>
+          {/* <li>
             <Link to="/internships" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Internships
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/contactus" className="py-7 px-3 hover:text-[#002a32d5] hover:font-bold">
               Contact Us
@@ -80,9 +80,9 @@ const Navbar = () => {
             </Link>
           </li>
           <NavLinks />
-          <Link to="/internships" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
+          {/* <Link to="/internships" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
             Internships
-          </Link>
+          </Link> */}
           <Link to="/contactus" className="py-7 px-3 block hover:text-[#002a32d5] hover:font-bold">
             Contact Us
           </Link>

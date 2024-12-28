@@ -1,6 +1,6 @@
 export const links = [
     {
-      name: "Categories",
+      name: "Subjects",
       submenu: true,
       sublinks: [
         {
@@ -11,18 +11,23 @@ export const links = [
             { name: "Civil Procedure 1908", link: "/" }, 
             { name: "Administrative Law", link: "/" },
             { name: "The Law of Contracts", link: "/" },
-          ],
-        },
-        {
-          // Head: "Bottomwear",
-          sublink: [
             { name: "Evidence Act", link: "/" },
             { name: "BNSS 2023", link: "/" },
-            { name: "Law of Taught", link: "/" },
+            { name: "Law of Torts", link: "/" },
             { name: "Election laws", link: "/" },
             { name: "Human Rights", link: "/" },
           ],
         },
+        // {
+        //   // Head: "Bottomwear",
+        //   sublink: [
+        //     { name: "Evidence Act", link: "/" },
+        //     { name: "BNSS 2023", link: "/" },
+        //     { name: "Law of Torts", link: "/" },
+        //     { name: "Election laws", link: "/" },
+        //     { name: "Human Rights", link: "/" },
+        //   ],
+        // },
         // {
         //   Head: "innerwear",
         //   sublink: [
@@ -57,29 +62,29 @@ export const links = [
       ],
     },
     {
-      name: "CATEGORIES2",
+      name: "Oppertunities",
       submenu: true,
       sublinks: [
         {
           // Head: "Topwear",
           sublink: [
-            { name: "T-shirt", link: "/" },
-            { name: "Casual shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
+            { name: "Moot Courts", link: "/" },
+            { name: "Panel Discussions", link: "/" },
+            { name: "Summer and Winter Programs", link: "/" },
+            { name: "Book Reviews", link: "/" },
+            { name: "Opinions", link: "/" },
           ],
         },
-        {
-          // Head: "Bottomwear",
-          sublink: [
-            { name: "T-shirt", link: "/" },
-            { name: "Casual shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
-            { name: "formal shirts", link: "/" },
-          ],
-        },
+        // {
+        //   // Head: "Bottomwear",
+        //   sublink: [
+        //     { name: "T-shirt", link: "/" },
+        //     { name: "Casual shirts", link: "/" },
+        //     { name: "formal shirts", link: "/" },
+        //     { name: "formal shirts", link: "/" },
+        //     { name: "formal shirts", link: "/" },
+        //   ],
+        // },
         // {
         //   Head: "innerwear",
         //   sublink: [

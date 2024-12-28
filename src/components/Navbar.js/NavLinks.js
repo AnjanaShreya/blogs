@@ -40,7 +40,7 @@ const NavLinks = () => {
                     ></div>
                   </div>
                   {/* adjust sublink size tabs */}
-                  <div className="bg-[#f3f4f6f7] p-5 grid grid-cols-2 gap-10">
+                  <div className="bg-[#f3f4f6f7] p-5 grid grid-cols-1 gap-10">
                     {link.sublinks.map((mysublinks, subIndex) => (
                       <div key={subIndex}> {/* Added unique key */}
                         <h1 className="text-lg font-semibold">
