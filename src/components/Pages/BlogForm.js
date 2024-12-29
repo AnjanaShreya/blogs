@@ -15,9 +15,12 @@ const BlogForm = () => {
       style={{ backgroundImage: `url(${img})` }}>
       <div className="bg-black bg-opacity-70 p-6 rounded-lg w-11/12 sm:w-3/4 lg:w-1/2 m-5">
         <form className="space-y-4">
-          <h2 className="text-white text-2xl font-bold mb-4 text-center">
+          <h2 className="text-white text-2xl font-bold mb-4 text-center underline">
             Submit Your Blog
           </h2>
+
+          <h3 className="text-white text-xl font-bold">Guidelines:</h3>
+          <h3 className="text-white">To display an input field for "Other Category" when "Other Category" is selected, we can use React's useState to track the selected value and conditionally render the additional input field. Here's the updated code:</h3>
 
           <div>
             <label htmlFor="name" className="block text-white font-medium mb-1">
@@ -27,32 +30,6 @@ const BlogForm = () => {
               type="text"
               id="name"
               placeholder="Enter your name"
-              required
-              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="year" className="block text-white font-medium mb-1">
-              Year: <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="year"
-              placeholder="Enter your year"
-              required
-              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="degree" className="block text-white font-medium mb-1">
-              Degree: <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="degree"
-              placeholder="Enter your degree"
               required
               className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
             />
@@ -72,6 +49,32 @@ const BlogForm = () => {
           </div>
 
           <div>
+            <label htmlFor="degree" className="block text-white font-medium mb-1">
+              Degree: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="degree"
+              placeholder="Enter your degree"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="year" className="block text-white font-medium mb-1">
+              Year: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="year"
+              placeholder="Enter your year"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
+
+          <div>
             <label htmlFor="shortBio" className="block text-white font-medium mb-1">
               Short Bio: <span className="text-red-500">*</span>
             </label>
@@ -85,7 +88,7 @@ const BlogForm = () => {
 
           <div>
             <label htmlFor="category" className="block text-white font-medium mb-1">
-              Select Category: <span className="text-red-500">*</span>
+              Select Category of Blog: <span className="text-red-500">*</span>
             </label>
             <select
               id="category"
