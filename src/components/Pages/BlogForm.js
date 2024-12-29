@@ -1,63 +1,154 @@
-import React from "react";
-import "./BlogForm.css";
+import React, { useState } from "react";
+import img from './img.jpg'; // Correctly importing the image file
 
-const FormPage = () => {
+const BlogForm = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   return (
-    <div className="form-page">
-      {/* Overlay */}
-      <div className="overlay"></div>
+    <div
+      className="min-h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${img})` }} // Using the imported image
+    >
+      <div className="bg-black bg-opacity-70 p-6 rounded-lg w-11/12 sm:w-3/4 lg:w-1/2 m-5">
+        <form className="space-y-4">
+          <h2 className="text-white text-2xl font-bold mb-4 text-center">
+            Submit Your Blog
+          </h2>
 
-      {/* Form Container */}
-      <div className="container">
-        <form id="p1">
-          <h2>Guidelines</h2>
-          <p className="guidelines" style={{paddingBottom: '20px'}}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-            quasi quaerat placeat excepturi explicabo fugiat dolore voluptates
-            earum, voluptas nostrum iusto ut officia consequuntur iure quo
-            vitae veritatis obcaecati ullam!<br/>
-            Once submitted will be reviewed and then mail will be sent about the approval.
-          </p>
+          <div>
+            <label htmlFor="name" className="block text-white font-medium mb-1">
+              Name: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
 
-          <label htmlFor="name">Name: <div className="required">*</div></label>
-          <input type="text" placeholder="Enter your name" required />
+          <div>
+            <label htmlFor="year" className="block text-white font-medium mb-1">
+              Year: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="year"
+              placeholder="Enter your year"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
 
-          <label htmlFor="year">Year: <div className="required">*</div></label>
-          <input type="text" placeholder="Enter your year" required />
+          <div>
+            <label htmlFor="degree" className="block text-white font-medium mb-1">
+              Degree: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="degree"
+              placeholder="Enter your degree"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
 
-          <label htmlFor="degree">Degree: <div className="required">*</div></label>
-          <input type="text" placeholder="Enter your degree" required />
+          <div>
+            <label htmlFor="university" className="block text-white font-medium mb-1">
+              University: <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="university"
+              placeholder="Enter your university"
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            />
+          </div>
 
-          <label htmlFor="university">University: <div className="required"> *</div></label>
-          <input type="text" placeholder="Enter your university" required />
+          <div>
+            <label htmlFor="shortBio" className="block text-white font-medium mb-1">
+              Short Bio: <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              id="shortBio"
+              placeholder="Write a short bio..."
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300 h-20 resize-none"
+            ></textarea>
+          </div>
 
-          <label htmlFor="shortBio">Short Bio: <div className="required">*</div></label>
-          <textarea name="shortBio" placeholder="Write a short bio..." required></textarea>
+          <div>
+            <label htmlFor="category" className="block text-white font-medium mb-1">
+              Select Category: <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="category"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+            >
+              <option value="" disabled>
+                Select category...
+              </option>
+              <option value="Constitution law">Constitution law</option>
+              <option value="Constitution of India">Constitution of India</option>
+              <option value="The Code of Civil Procedure 1908">
+                The Code of Civil Procedure 1908
+              </option>
+              <option value="Administrative Law">Administrative Law</option>
+              <option value="The Law of Contracts">The Law of Contracts</option>
+              <option value="BNSS 2023">BNSS 2023</option>
+              <option value="The Law of Evidence">The Law of Evidence</option>
+              <option value="Law of Torts">Law of Torts</option>
+              <option value="Election Laws">Election Laws</option>
+              <option value="Human Rights">Human Rights</option>
+              <option value="Other Category">Other Category</option>
+            </select>
+          </div>
 
-          <label htmlFor="category">Select Category: <div className="required">*</div></label>
-          <select name="category">
-            <option value="" disabled selected>Select category...</option>
-            <option value="Constitution law">Constitution law</option>
-            <option value="Constitution of India">Constitution of India</option>
-            <option value="The Code of Civil Procedure 1908">The Code of Civil Procedure 1908 </option>
-            <option value="Administrative Law">Administrative Law</option>
-            <option value="The Law of Contracts">The Law of Contracts</option>
-            <option value="BNSS 2023 - Bharatiya Nagrik Suraksha Sanhita 2023"> BNSS 2023 - Bharatiya Nagrik Suraksha Sanhita 2023 </option>
-            <option value="The Law of Evidence, Evidence Act"> The Law of Evidence, Evidence Act </option>
-            <option value="Law of Torts">Law of Torts</option>
-            <option value="Election Laws">Election Laws</option>
-            <option value="Human Rights">Human Rights</option>
-            <option value="Human Rights">Other Category</option>
-          </select>
+          {selectedCategory === "Other Category" && (
+            <div>
+              <label
+                htmlFor="otherCategory"
+                className="block text-white font-medium mb-1"
+              >
+                Specify Category Name: <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="otherCategory"
+                placeholder="Enter category name"
+                required
+                className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300"
+              />
+            </div>
+          )}
 
-          <label htmlFor="blog">Write Your Blog:<div className="required">*</div></label>
-          <textarea className="blog" name="blog" placeholder="Write your blog here..." required></textarea>
+          <div>
+            <label htmlFor="blog" className="block text-white font-medium mb-1">
+              Write Your Blog: <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              id="blog"
+              placeholder="Write your blog here..."
+              required
+              className="w-full bg-white bg-opacity-90 text-black p-3 rounded-md border border-gray-300 h-52 resize-none"
+            ></textarea>
+          </div>
 
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            className="w-full bg-teal-500 text-white font-bold py-2 px-4 rounded-md hover:bg-teal-600"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
   );
 };
 
-export default FormPage;
+export default BlogForm;
