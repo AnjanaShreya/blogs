@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import img from './img.jpg'; // Correctly importing the image file
+// import Navbar from "../Navbar.js/Navbar";
+// import Footer from "../Navbar.js/Footer";
 
 const BlogForm = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
-    <div
-      className="min-h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${img})` }} // Using the imported image
-    >
+    <div>
+      {/* <div className="relative z-20">
+        <Navbar />
+      </div> */}
+      <div className="min-h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${img})` }}>
       <div className="bg-black bg-opacity-70 p-6 rounded-lg w-11/12 sm:w-3/4 lg:w-1/2 m-5">
         <form className="space-y-4">
           <h2 className="text-white text-2xl font-bold mb-4 text-center">
@@ -147,6 +151,8 @@ const BlogForm = () => {
           </button>
         </form>
       </div>
+    </div>
+    {/* <Footer /> */}
     </div>
   );
 };
