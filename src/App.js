@@ -1,7 +1,7 @@
 import './App.css';
 import Dashboard from './components/Dashboard';
-import BlogForm from './components/Pages/BlogForm';
-import ContactUs from './components/Pages/ContactUs';
+import BlogForm from './Pages/BlogForm';
+import ContactUs from './Pages/ContactUs';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

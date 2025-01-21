@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from '../../assets/Logo.png'
-import Button from "../Button";
+import Logo from '../assets/Logo.png';
+import Button from '../components/Button';
 import NavLinks from "./NavLinks";
-import Signup from "../Signup";
+import Signup from "../components/Signup";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Toggle for mobile menu

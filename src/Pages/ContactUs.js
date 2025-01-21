@@ -1,7 +1,7 @@
 import React from "react";
-import img2 from "../../assets/img2.jpg";
-import Navbar from "../Navbar.js/Navbar";
-import Footer from "../Navbar.js/Footer";
+import img2 from "../assets/img2.jpg";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Navbar/Footer";
 
 const ContactUs = () => {
   return (

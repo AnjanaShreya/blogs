@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../assets/Logo.png'
+import Logo from '../assets/Logo.png'
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
@@ -11,13 +11,16 @@ const Footer = () => {
         <Link to='/'>
             <img src={Logo} alt='Logo' className='h-16' />
         </Link>
-        <p style={{paddingLeft:'10px'}}>Founded By Mandeep Kaur</p>
+        <style>
+          {`@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');`}
+        </style> 
+        <p style={{paddingLeft:'10px'}}>Founded By <span style={{fontFamily: "'Dancing Script', cursive", fontSize:"20px"}}>Mandeep Kaur</span></p>
         </div>
         <div className='text-gray-200'>
           <p className='text-2xl font-semibold underline leading-loose text-white'>Contact Us</p>
           <a className='cursor-pointer' href="mailto:abc@gmail.com">abc@gmail.com</a>
           <p className='cursor-pointer'>+91 1234567890</p>
-          <div className="flex space-x-4">
+          <div className="flex space-x-2">
             <a
               href="https://instagram.com" rel="instagram" className="hover:text-[#002a32] m-1">
               <FaInstagram size={20} />

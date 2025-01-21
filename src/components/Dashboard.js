@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar.js/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Signup from "./Signup";
-import Footer from "./Navbar.js/Footer";
+import Footer from "../Navbar/Footer";
+import ProfileCard from "./ProfileCard";
 
 const Dashboard = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -9,20 +10,19 @@ const Dashboard = () => {
 
   const handleButtonClick = () => {
     if (isLoggedIn) {
-      // If logged in, redirect directly to the blogform page
       window.location.href = "/blogform";
     } else {
-      setShowPopup(true); // Show the login/signup popup
+      setShowPopup(true); 
     }
   };
 
   const handleClosePopup = () => {
-    setShowPopup(false); // Close the popup
+    setShowPopup(false); 
   };
 
   const handleLogin = () => {
-    setIsLoggedIn(true); // Set logged-in state
-    setShowPopup(false); // Close the popup
+    setIsLoggedIn(true); 
+    setShowPopup(false); 
   };
 
   return (
@@ -47,8 +47,12 @@ const Dashboard = () => {
 
       {/* Show Signup Popup */}
       {showPopup && <Signup onClose={handleClosePopup} onLogin={handleLogin} />}
-      <div className="h-44">
+      <div className="h-auto">
         {/* Content Goes here */}
+        <div>
+          hi how r u
+          <ProfileCard />
+        </div>
       </div>
       <Footer />
     </div>
